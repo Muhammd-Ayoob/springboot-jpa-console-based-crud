@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -71,7 +72,21 @@ public class SpringjpacrudApplication {
          * Deleting an specific element
          */
 
-        employeeRepository.deleteById(2);
+//        employeeRepository.deleteById(2);
+
+
+
+
+
+        Employee employee = employeeRepository.getByName("Ayoob");
+
+        System.out.println("EMPLOYEE WITH NAME AYOOB IS " + employee);
+
+        List<Employee> list = employeeRepository.findAllBySalary(70000);
+
+        System.out.println("List by salary "+list);
+
+
     }
 
 }
